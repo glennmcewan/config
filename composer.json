@@ -1,0 +1,16 @@
+{
+    "name": "glennmcewan/config",
+    "description": "Simple Config Manager, Loader, and Writer.",
+    "keywords": ["config"],
+    "authors": [
+        {
+            "name": "Glenn McEwan",
+            "email": "glenn@web-dev.ninja"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Glenn\\Config\\": "src/"
+        }
+    }
+}
