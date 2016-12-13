@@ -21,9 +21,11 @@ interface FacadeContract
      * Get a value from the config.
      * Decorated to pull from the parent if this Facade uses a parent key.
      *
-     * @param  string $key     The Config key to fetch the value for
-     * @param  mixed  $default The default, if the config key does not exist.
-     * @return mixed           The config value, could be a string, array, etc.
+     * @param string $key     The Config key to fetch the value for
+     * @param mixed  $default The default, if the config key does not exist.
+     *
+     * @return mixed The config value, could be a string, array, etc.
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function get($key, $default = null);
