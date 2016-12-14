@@ -1,6 +1,7 @@
 {
     "name": "glennmcewan/config",
     "description": "Simple Config Manager, Loader, and Writer.",
+    "license": "MIT",
     "keywords": ["config"],
     "authors": [
         {
