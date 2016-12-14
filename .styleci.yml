@@ -1,0 +1,5 @@
+preset: symfony
+
+disabled:
+  - phpdoc_scalar
+  - no_blank_lines_between_imports
