@@ -11,6 +11,7 @@ class Manager implements ArrayAccess, ManagerContract
 {
     /**
      * All of the configuration items.
+     *
      * @var array
      */
     protected $items = [];
@@ -18,7 +19,8 @@ class Manager implements ArrayAccess, ManagerContract
     /**
      * Construct a new Config Manager pre-loaded with items.
      *
-     * @param  array $items
+     * @param array $items
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function __construct(array $items = [])
@@ -29,8 +31,10 @@ class Manager implements ArrayAccess, ManagerContract
     /**
      * Check if a key exists in the config.
      *
-     * @param  string  $key The key in the config to check for existence
-     * @return boolean
+     * @param string $key The key in the config to check for existence
+     *
+     * @return bool
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function has($key)
@@ -59,9 +63,11 @@ class Manager implements ArrayAccess, ManagerContract
     /**
      * Retrieve a given config value by its key.
      *
-     * @param  string $key     Config key
-     * @param  mixed  $default Default value if the key doesn't exist
-     * @return mixed           The config value
+     * @param string $key     Config key
+     * @param mixed  $default Default value if the key doesn't exist
+     *
+     * @return mixed The config value
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function get($key, $default = null)
@@ -87,6 +93,7 @@ class Manager implements ArrayAccess, ManagerContract
      * Retrieve all of the config items.
      *
      * @return array
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function all()
@@ -97,9 +104,11 @@ class Manager implements ArrayAccess, ManagerContract
     /**
      * Set a config entry by key, optional value.
      *
-     * @param  string $key   Config key
-     * @param  mixed  $value Config value
-     * @return static Return self / $this for chain-ability.
+     * @param string $key   Config key
+     * @param mixed  $value Config value
+     *
+     * @return static return self / $this for chain-ability
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function set($key, $value = null)
@@ -130,8 +139,9 @@ class Manager implements ArrayAccess, ManagerContract
      * otherwise it will be placed at the root level in the config.
      *
      * @param  ParserContract$parser The parser to parse the $data
-     * @param  mixed          $data   The data which will be transformed in to Config data
-     * @param  string         $key    [optional] A parent config key to set this data in to
+     * @param mixed  $data The data which will be transformed in to Config data
+     * @param string $key  [optional] A parent config key to set this data in to
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function setFromParser(ParserContract $parser, $data, $key = null)
@@ -159,8 +169,10 @@ class Manager implements ArrayAccess, ManagerContract
     /**
      * Check if a key exists in the config.
      *
-     * @param  string  $key The key in the config to check for existence
-     * @return boolean
+     * @param string $key The key in the config to check for existence
+     *
+     * @return bool
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function offsetExists($key)
@@ -171,8 +183,10 @@ class Manager implements ArrayAccess, ManagerContract
     /**
      * Retrieve a given config value by its key.
      *
-     * @param  string $key     Config key
-     * @return mixed           The config value
+     * @param string $key Config key
+     *
+     * @return mixed The config value
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function offsetGet($key)
@@ -183,8 +197,9 @@ class Manager implements ArrayAccess, ManagerContract
     /**
      * Set a config entry by key, optional value.
      *
-     * @param  string $key   Config key
-     * @param  mixed  $value Config value
+     * @param string $key   Config key
+     * @param mixed  $value Config value
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function offsetSet($key, $value)
@@ -195,7 +210,8 @@ class Manager implements ArrayAccess, ManagerContract
     /**
      * Unset a configuration option.
      *
-     * @param  string $key
+     * @param string $key
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function offsetUnset($key)

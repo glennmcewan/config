@@ -9,13 +9,15 @@ use Glenn\Config\Contracts\ParserContract;
 class Loader implements LoaderContract
 {
     /**
-     * The Config Manager
+     * The Config Manager.
+     *
      * @var ManagerContract
      */
     protected $config;
 
     /**
-     * The available config parsers
+     * The available config parsers.
+     *
      * @var ParserContract[]
      */
     protected $parsers;
@@ -24,7 +26,8 @@ class Loader implements LoaderContract
      * Construct a new Config Loader with the Config to load in to
      * being passed as a constructor dependency.
      *
-     * @param  Manager $config
+     * @param Manager $config
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function __construct(ManagerContract $config)
@@ -35,9 +38,11 @@ class Loader implements LoaderContract
     /**
      * {@inheritdoc}
      *
-     * @param  ParserContract $parser
-     * @param  string         $key
+     * @param ParserContract $parser
+     * @param string         $key
+     *
      * @return ParserContract
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function registerParser(ParserContract $parser, $key = null)
@@ -52,14 +57,16 @@ class Loader implements LoaderContract
     /**
      * {@inheritdoc}
      *
-     * @param  string         $key Parser Key
+     * @param string $key Parser Key
+     *
      * @return ParserContract
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function getParser($key)
     {
         if (!array_key_exists($key, $this->parsers)) {
-            return null;
+            return;
         }
 
         return $this->parsers[$key];
