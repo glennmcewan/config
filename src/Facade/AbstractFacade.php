@@ -16,13 +16,15 @@ use Glenn\Config\Contracts\ManagerContract;
 abstract class AbstractFacade implements FacadeContract
 {
     /**
-     * Config manager
+     * Config manager.
+     *
      * @var ManagerContract
      */
     protected $config;
 
     /**
-     * The parent key of this Facade's config entries
+     * The parent key of this Facade's config entries.
+     *
      * @var string
      */
     protected $parentKey = null;
@@ -30,7 +32,8 @@ abstract class AbstractFacade implements FacadeContract
     /**
      * Construct a new Facade and pass in the config.
      *
-     * @param  ManagerContract $config
+     * @param ManagerContract $config
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function __construct(ManagerContract $config)
@@ -42,15 +45,17 @@ abstract class AbstractFacade implements FacadeContract
      * Get a value from the config.
      * Decorated to pull from the parent if this Facade uses a parent key.
      *
-     * @param  string $key     The Config key to fetch the value for
-     * @param  mixed  $default The default, if the config key does not exist.
-     * @return mixed           The config value, could be a string, array, etc.
+     * @param string $key     The Config key to fetch the value for
+     * @param mixed  $default the default, if the config key does not exist
+     *
+     * @return mixed the config value, could be a string, array, etc
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function get($key, $default = null)
     {
         if ($this->isNested()) {
-            $key = $this->parentKey . '.' . $key;
+            $key = $this->parentKey.'.'.$key;
         }
 
         return $this->config->get($key, $default);
@@ -60,7 +65,8 @@ abstract class AbstractFacade implements FacadeContract
      * When fetching config entries from this facade,
      * are they nested under one parent / head key?
      *
-     * @return boolean
+     * @return bool
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     protected function isNested()

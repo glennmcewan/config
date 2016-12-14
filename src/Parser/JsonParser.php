@@ -14,8 +14,10 @@ class JsonParser implements ParserContract
     /**
      * {@inheritdoc}
      *
-     * @param  string $data JSON as a string
-     * @return array        Array of data
+     * @param string $data JSON as a string
+     *
+     * @return array Array of data
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function parse($data)

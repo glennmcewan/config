@@ -7,8 +7,9 @@ interface LoaderContract
     /**
      * Register a Parser on to the Config Loader.
      *
-     * @param  ParserContract $parser
-     * @param  string         $key    [optional] Name of the Parser's key, used in @getParser($key)
+     * @param ParserContract $parser
+     * @param string         $key    [optional] Name of the Parser's key, used in @getParser($key)
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function registerParser(ParserContract $parser, $key = null);
@@ -16,8 +17,10 @@ interface LoaderContract
     /**
      * Get a Parser by its key. Default key scheme is the Parser's FQCN.
      *
-     * @param  string $key Parser key.
+     * @param string $key parser key
+     *
      * @return ParserContract
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function getParser($key);

@@ -15,6 +15,7 @@ class ManagerTest extends PHPUnit_Framework_TestCase
 
     /**
      * Test the @has method.
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function testHasMethod()
@@ -26,6 +27,7 @@ class ManagerTest extends PHPUnit_Framework_TestCase
 
     /**
      * Test the @get method.
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function testGetMethod()
@@ -39,6 +41,7 @@ class ManagerTest extends PHPUnit_Framework_TestCase
 
     /**
      * Test the @set method.
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function testSetMethod()
@@ -57,6 +60,7 @@ class ManagerTest extends PHPUnit_Framework_TestCase
 
     /**
      * Test the @get method works properly when passing a default.
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function testGetDefaultMethod()
@@ -70,6 +74,7 @@ class ManagerTest extends PHPUnit_Framework_TestCase
 
     /**
      * Test the @all method.
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function testAllMethod()
@@ -90,8 +95,10 @@ class ManagerTest extends PHPUnit_Framework_TestCase
     /**
      * Test the @set method sets a config entry,
      * and is retrievable with @get.
+     *
      * @get with a default parameter should still return null if the
      * original @set call had a null value.
+     *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
     public function testSetNullMethod()
