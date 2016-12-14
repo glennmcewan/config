@@ -138,7 +138,7 @@ class Manager implements ArrayAccess, ManagerContract
     {
         $array = $parser->parse($data);
 
-        if ($key) {
+        if ($key !== null) {
             $this->set($key, $array);
         } else {
             foreach ($array as $head => $node) {

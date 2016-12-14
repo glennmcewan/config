@@ -2,6 +2,7 @@
 
 namespace Glenn\Config;
 
+use Glenn\Config\Contracts\ManagerContract;
 use Glenn\Config\Contracts\LoaderContract;
 use Glenn\Config\Contracts\ParserContract;
 
@@ -26,7 +27,7 @@ class Loader implements LoaderContract
      * @param  Manager $config
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
-    public function __construct(Manager $config)
+    public function __construct(ManagerContract $config)
     {
         $this->config = $config;
     }
@@ -41,7 +42,7 @@ class Loader implements LoaderContract
      */
     public function registerParser(ParserContract $parser, $key = null)
     {
-        if (!$key) {
+        if ($key !== null) {
             $key = get_class($parser);
         }
 
