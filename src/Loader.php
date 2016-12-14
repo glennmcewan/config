@@ -23,10 +23,10 @@ class Loader implements LoaderContract
      * Construct a new Config Loader with the Config to load in to
      * being passed as a constructor dependency.
      *
-     * @param  Config $config
+     * @param  Manager $config
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
-    public function __construct(Config $config)
+    public function __construct(Manager $config)
     {
         $this->config = $config;
     }
