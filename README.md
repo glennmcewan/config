@@ -70,7 +70,7 @@ echo $config->get('gender', 'male'); // 'male'
 ```php
 $config->set('name', 'Glenn');
 
-echo $config->get('name'); // 'Glenn
+echo $config->get('name'); // 'Glenn'
 
 $config->set('name', 'Dave');
 
