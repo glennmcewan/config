@@ -74,5 +74,5 @@ echo $config->get('name'); // 'Glenn
 
 $config->set('name', 'Dave');
 
-echo $config->get('name'); // 'Dave
+echo $config->get('name'); // 'Dave'
 ```
