@@ -138,9 +138,9 @@ class Manager implements ArrayAccess, ManagerContract
      * then the data will be put in to the Config as deployment.*,
      * otherwise it will be placed at the root level in the config.
      *
-     * @param  ParserContract$parser The parser to parse the $data
-     * @param mixed  $data The data which will be transformed in to Config data
-     * @param string $key  [optional] A parent config key to set this data in to
+     * @param ParserContract $parser The parser to parse the $data
+     * @param mixed          $data The data which will be transformed in to Config data
+     * @param string         $key  [optional] A parent config key to set this data in to
      *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
