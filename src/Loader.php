@@ -47,7 +47,7 @@ class Loader implements LoaderContract
      */
     public function registerParser(ParserContract $parser, $key = null)
     {
-        if ($key !== null) {
+        if ($key === null) {
             $key = get_class($parser);
         }
 
