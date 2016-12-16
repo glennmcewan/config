@@ -54,33 +54,25 @@ $config->set('languages', ['English', 'Spanish']);
 - Getting Config values
 
 ```php
-echo $config->get('name');
-// 'Glenn'
+echo $config->get('name'); // 'Glenn'
 
-echo $config->get('age');
-// 18
+echo $config->get('age'); // 18
 
-echo $config->get('languages');
-// [
-// 		0 => 'English',
-// 		1 => 'Spanish',
-// ]
+echo $config->get('languages'); // [0 => 'English', 1 => 'Spanish']
 
-echo $config->get('gender');
-// null
+echo $config->get('gender'); // null
 
-echo $config->get('gender', 'male');
-// 'male'
+echo $config->get('gender', 'male'); // 'male'
 ```
 
 - Changing Config values
 
 ```php
-echo $config->get('name');
-// 'Glenn
+$config->set('name', 'Glenn');
+
+echo $config->get('name'); // 'Glenn
 
 $config->set('name', 'Dave');
 
-echo $config->get('name');
-// 'Dave
+echo $config->get('name'); // 'Dave
 ```
