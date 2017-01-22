@@ -50,7 +50,7 @@ class Manager implements ArrayAccess, ManagerContract
         }
 
         foreach (explode('.', $key) as $segment) {
-            if (!is_array($items) || !array_key_exists($key, $items)) {
+            if (!is_array($items) || !array_key_exists($segment, $items)) {
                 return false;
             }
 
