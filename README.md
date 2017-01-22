@@ -7,7 +7,7 @@
 Small but powerful Config package. Suitable for basic config handling with plain arrays or various config files, whilst remaining easy to use when scaling for use in larger applications with more complex configuration setups.
 
 ## Requirements
-`PHP 5.4+`. Master is CI tested on the following versions of PHP: `5.4`, `5.5`, `5.7`, `7.0`, `7.1`, and `HHVM`.
+`PHP 5.5+`. Master is CI tested on the following versions of PHP: `5.5`, `5.7`, `7.0`, `7.1`, and `HHVM`.
 
 ## Installation
 
