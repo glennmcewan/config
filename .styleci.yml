@@ -6,3 +6,5 @@ disabled:
   - new_with_braces
   - phpdoc_separation
   - concat_without_spaces
+  - phpdoc_annotation_without_dot
+  - unalign_double_arrow
