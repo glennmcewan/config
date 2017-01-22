@@ -1,7 +1,7 @@
 preset: symfony
 
 enabled:
-    concat_without_spaces
+    - concat_without_spaces
 
 disabled:
   - phpdoc_scalar
