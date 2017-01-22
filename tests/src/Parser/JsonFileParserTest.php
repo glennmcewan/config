@@ -16,9 +16,9 @@ class JsonFileParserTest extends PHPUnit_Framework_TestCase
      */
     public function testValidJsonFromFile()
     {
-        $parser = new JsonFileParser;
+        $parser = new JsonFileParser();
 
-        $path = __DIR__ . '/../../fixtures/parser/valid.json';
+        $path = __DIR__.'/../../fixtures/parser/valid.json';
 
         $expected = [
             'name' => 'Glenn',
@@ -43,9 +43,9 @@ class JsonFileParserTest extends PHPUnit_Framework_TestCase
     {
         $this->setExpectedException(ParseException::class);
 
-        $parser = new JsonFileParser;
+        $parser = new JsonFileParser();
 
-        $path = __DIR__ . '/../../fixtures/parser/invalid_single-quotes.json';
+        $path = __DIR__.'/../../fixtures/parser/invalid_single-quotes.json';
 
         $parser->parse($path);
     }
@@ -59,9 +59,9 @@ class JsonFileParserTest extends PHPUnit_Framework_TestCase
     {
         $this->setExpectedException(ParseException::class);
 
-        $parser = new JsonFileParser;
+        $parser = new JsonFileParser();
 
-        $path = __DIR__ . '/../../fixtures/parser/invalid_trailing-comma.json';
+        $path = __DIR__.'/../../fixtures/parser/invalid_trailing-comma.json';
 
         $parser->parse($path);
     }

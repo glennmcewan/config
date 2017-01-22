@@ -9,11 +9,11 @@ use Glenn\Config\Manager;
 class ManagerTest extends PHPUnit_Framework_TestCase
 {
     protected $sampleConfigData = [
-        'name'       => 'Glenn',
-        'age'        => 18,
+        'name' => 'Glenn',
+        'age' => 18,
         'favourites' => [
-            'food'   => 'pizza',
-            'drink'  => 'coke',
+            'food' => 'pizza',
+            'drink' => 'coke',
             'colour' => 'black',
         ],
     ];
@@ -143,7 +143,7 @@ class ManagerTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test the set array method
+     * Test the set array method.
      *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
