@@ -143,7 +143,7 @@ class ManagerTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test the set array method
+     * Test the set array method.
      *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
