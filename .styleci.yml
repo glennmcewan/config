@@ -1,11 +1,8 @@
 preset: symfony
 
-enabled:
-    - concat_without_spaces
-
 disabled:
   - phpdoc_scalar
   - no_blank_lines_between_imports
   - new_with_braces
-  - concat_with_spaces
   - phpdoc_separation
+  - concat_without_spaces
