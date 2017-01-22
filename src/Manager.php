@@ -131,27 +131,23 @@ class Manager implements ArrayAccess, ManagerContract
     }
 
     /**
-     * Set config data using a Parser and given data, to be parsed by the Parser.
-     * Optionally, a parent key in which the config data will reside.
-     *
      * If a parent key is passed, for example, as 'deployment',
      * then the data will be put in to the Config as deployment.*,
      * otherwise it will be placed at the root level in the config.
      *
-     * @param ParserContract $parser The parser to parse the $data
-     * @param mixed          $data   The data which will be transformed in to Config data
-     * @param string         $key    [optional] A parent config key to set this data in to
+     * Optionally, a parent key in which the config data will reside.
+     *
+     * @param mixed  $value The array to set in to the config
+     * @param string $key   [optional] A parent config key to set the array in to
      *
      * @author Glenn McEwan <glenn@web-dev.ninja>
      */
-    public function setFromParser(ParserContract $parser, $data, $key = null)
+    public function setArray($value, $key = null)
     {
-        $array = $parser->parse($data);
-
         if ($key !== null) {
-            $this->set($key, $array);
+            $this->set($key, $value);
         } else {
-            foreach ($array as $head => $node) {
+            foreach ($value as $head => $node) {
                 $this->set($head, $node);
             }
         }

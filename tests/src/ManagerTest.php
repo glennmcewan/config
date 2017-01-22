@@ -9,8 +9,13 @@ use Glenn\Config\Manager;
 class ManagerTest extends PHPUnit_Framework_TestCase
 {
     protected $sampleConfigData = [
-        'name' => 'Glenn',
-        'age' => 18,
+        'name'       => 'Glenn',
+        'age'        => 18,
+        'favourites' => [
+            'food'   => 'pizza',
+            'drink'  => 'coke',
+            'colour' => 'black',
+        ],
     ];
 
     /**
@@ -23,6 +28,23 @@ class ManagerTest extends PHPUnit_Framework_TestCase
         $config = new Manager($this->sampleConfigData);
 
         $this->assertTrue($config->has('name'));
+    }
+
+    /**
+     * Test the has method works successfully for nested querying.
+     * Checking if sub-level nodes in the config exist using dot notation.
+     *
+     * @author Glenn McEwan <glenn@web-dev.ninja>
+     */
+    public function testNestedHasMethod()
+    {
+        $config = new Manager($this->sampleConfigData);
+
+        $this->assertTrue($config->has('favourites.food'));
+        $this->assertTrue($config->has('favourites.drink'));
+        $this->assertTrue($config->has('favourites.colour'));
+        $this->assertFalse($config->has('favourites.dog'));
+        $this->assertFalse($config->has('wrong.name'));
     }
 
     /**
@@ -118,5 +140,68 @@ class ManagerTest extends PHPUnit_Framework_TestCase
         $config->set('gender', 'female');
 
         $this->assertSame($config->get('gender'), 'female');
+    }
+
+    /**
+     * Test the set array method
+     *
+     * @author Glenn McEwan <glenn@web-dev.ninja>
+     */
+    public function testSetArrayMethod()
+    {
+        $config = new Manager($this->sampleConfigData);
+
+        $config->set(
+            'languages',
+            [
+                'first' => 'English',
+                'second' => 'Spanish',
+            ]
+        );
+
+        $config->setArray([
+            'languages' => [
+                'third' => 'French',
+            ],
+        ]);
+
+        $this->assertSame(
+            $config->get('languages'),
+            [
+                'third' => 'French',
+            ]
+        );
+    }
+
+    /**
+     * Test the set array method with a key passed in as a second parameter.
+     *
+     * @author Glenn McEwan <glenn@web-dev.ninja>
+     */
+    public function testSetArrayMethodWithKey()
+    {
+        $config = new Manager($this->sampleConfigData);
+
+        $config->set(
+            'languages',
+            [
+                'first' => 'English',
+                'second' => 'Spanish',
+            ]
+        );
+
+        $config->setArray(
+            [
+                'third' => 'French',
+            ],
+            'languages'
+        );
+
+        $this->assertSame(
+            $config->get('languages'),
+            [
+                'third' => 'French',
+            ]
+        );
     }
 }
