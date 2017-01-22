@@ -5,7 +5,6 @@ namespace Glenn\Config;
 use ArrayAccess;
 
 use Glenn\Config\Contracts\ManagerContract;
-use Glenn\Config\Contracts\ParserContract;
 
 class Manager implements ArrayAccess, ManagerContract
 {

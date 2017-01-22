@@ -16,7 +16,7 @@ class JsonParserTest extends PHPUnit_Framework_TestCase
      */
     public function testValidJsonFromFile()
     {
-        $parser = new JsonParser;
+        $parser = new JsonParser();
 
         $expected = [
             'name' => 'Glenn',
@@ -27,7 +27,7 @@ class JsonParserTest extends PHPUnit_Framework_TestCase
             ],
         ];
 
-        $data = file_get_contents(__DIR__ . '/../../fixtures/parser/valid.json');
+        $data = file_get_contents(__DIR__.'/../../fixtures/parser/valid.json');
 
         $json = $parser->parse($data);
 
@@ -43,9 +43,9 @@ class JsonParserTest extends PHPUnit_Framework_TestCase
     {
         $this->setExpectedException(ParseException::class);
 
-        $parser = new JsonParser;
+        $parser = new JsonParser();
 
-        $data = file_get_contents(__DIR__ . '/../../fixtures/parser/invalid_single-quotes.json');
+        $data = file_get_contents(__DIR__.'/../../fixtures/parser/invalid_single-quotes.json');
 
         $parser->parse($data);
     }
@@ -59,9 +59,9 @@ class JsonParserTest extends PHPUnit_Framework_TestCase
     {
         $this->setExpectedException(ParseException::class);
 
-        $parser = new JsonParser;
+        $parser = new JsonParser();
 
-        $data = file_get_contents(__DIR__ . '/../../fixtures/parser/invalid_trailing-comma.json');
+        $data = file_get_contents(__DIR__.'/../../fixtures/parser/invalid_trailing-comma.json');
 
         $parser->parse($data);
     }
