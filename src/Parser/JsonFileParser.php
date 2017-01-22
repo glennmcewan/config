@@ -2,8 +2,6 @@
 
 namespace Glenn\Config\Parser;
 
-use Bob\Contracts\Filesystem\ManagerInterface as FilesystemContract;
-
 /**
  * Loads up a given file from a path, and passes the data to the parent JsonParser,
  * which will read the contents as a JSON string
