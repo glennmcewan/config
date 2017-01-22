@@ -55,7 +55,7 @@ abstract class AbstractFacade implements FacadeContract
     public function get($key, $default = null)
     {
         if ($this->isNested()) {
-            $key = $this->parentKey.'.'.$key;
+            $key = $this->parentKey . '.' . $key;
         }
 
         return $this->config->get($key, $default);
