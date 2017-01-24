@@ -23,9 +23,6 @@ script:
 after_script:
   - if [ $TRAVIS_PHP_VERSION = '5.6' ]; then wget https://scrutinizer-ci.com/ocular.phar; fi
   - if [ $TRAVIS_PHP_VERSION = '5.6' ]; then php ocular.phar code-coverage:upload --format=php-clover coverage.clover; fi
-  - echo $TRAVIS_PHP_VERSION
-  - echo $TRAVIS_PHP_VERSION = '5.6'
-  - echo $TRAVIS_PHP_VERSION = 5.6.*
 
 matrix:
   allow_failures:
