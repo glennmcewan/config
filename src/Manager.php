@@ -48,12 +48,8 @@ class Manager implements ArrayAccess, ManagerContract
             return true;
         }
 
-        foreach (explode('.', $key) as $segment) {
-            if (!is_array($items) || !array_key_exists($segment, $items)) {
-                return false;
-            }
-
-            $items = $items[$segment];
+        if ($this->get($key) === null) {
+            return false;
         }
 
         return true;
