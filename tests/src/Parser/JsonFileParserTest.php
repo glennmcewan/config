@@ -65,4 +65,18 @@ class JsonFileParserTest extends PHPUnit_Framework_TestCase
 
         $parser->parse($path);
     }
+
+    /**
+     * Test that an exception is thrown because the file does not exist.
+     *
+     * @author Glenn McEwan <glenn@web-dev.ninja>
+     */
+    public function testFileNotFoundException()
+    {
+        $this->setExpectedException(ParseException::class);
+
+        $parser = new JsonFileParser;
+
+        $parser->parse('file-which-does-not-exist');
+    }
 }
