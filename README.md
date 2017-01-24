@@ -3,6 +3,7 @@
 [![Build Status](https://travis-ci.org/glennmcewan/config.svg?branch=master)](https://travis-ci.org/glennmcewan/config)
 [![StyleCI](https://styleci.io/repos/75986423/shield?style=flat)](https://styleci.io/repos/75986423)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/glennmcewan/config/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/glennmcewan/config/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/glennmcewan/config/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/glennmcewan/config/?branch=master)
 
 Small but powerful Config package. Suitable for basic config handling with plain arrays or various config files, whilst remaining easy to use when scaling for use in larger applications with more complex configuration setups.
 
