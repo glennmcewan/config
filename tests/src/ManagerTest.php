@@ -31,6 +31,22 @@ class ManagerTest extends PHPUnit_Framework_TestCase
     }
 
     /**
+     * Test the has method when the config has no items.
+     *
+     * @author Glenn McEwan <glenn@web-dev.ninja>
+     */
+    public function testHasWithNoConfigItems()
+    {
+        $config = new Manager;
+
+        $key = null;
+
+        $this->assertFalse($config->has('something'));
+
+        $this->assertFalse($config->has($key));
+    }
+
+    /**
      * Test the has method works successfully for nested querying.
      * Checking if sub-level nodes in the config exist using dot notation.
      *
@@ -203,5 +219,65 @@ class ManagerTest extends PHPUnit_Framework_TestCase
                 'third' => 'French',
             ]
         );
+    }
+
+    /**
+     * Test the ArrayAccess interface's offsetExists method.
+     *
+     * @author Glenn McEwan <glenn@web-dev.ninja>
+     */
+    public function testArrayAccessOffsetExists()
+    {
+        $config = new Manager($this->sampleConfigData);
+
+        $this->assertTrue(isset($config['name']));
+
+        $this->assertFalse(isset($config['wrong']));
+    }
+
+    /**
+     * Test the ArrayAccess interface's offsetGet method.
+     *
+     * @author Glenn McEwan <glenn@web-dev.ninja>
+     */
+    public function testArrayAccessOffsetGet()
+    {
+        $config = new Manager($this->sampleConfigData);
+
+        $this->assertSame('Glenn', $config['name']);
+
+        $this->assertNull($config['wrong']);
+    }
+
+    /**
+     * Test the ArrayAccess interface's offsetSet method.
+     *
+     * @author Glenn McEwan <glenn@web-dev.ninja>
+     */
+    public function testArrayAccessOffsetSet()
+    {
+        $config = new Manager($this->sampleConfigData);
+
+        $this->assertNull($config['wrong']);
+
+        $config['wrong'] = 'right';
+
+        $this->assertSame('right', $config['wrong']);
+    }
+
+    /**
+     * Test the ArrayAccess interface's offsetUnset method.
+     *
+     * @author Glenn McEwan <glenn@web-dev.ninja>
+     */
+    public function testArrayAccessOffsetUnset()
+    {
+        $config = new Manager($this->sampleConfigData);
+
+        $this->assertSame('Glenn', $config['name']);
+
+        unset($config['name']);
+
+        $this->assertNull($config['name']);
     }
 }
