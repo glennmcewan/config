@@ -66,7 +66,7 @@ class Loader implements LoaderContract
     public function getParser($key)
     {
         if (!array_key_exists($key, $this->parsers)) {
-            return;
+            return null;
         }
 
         return $this->parsers[$key];
