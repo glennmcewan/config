@@ -27,7 +27,7 @@ class AbstractFacadeTest extends PHPUnit_Framework_TestCase
             ],
         ],
     ];
-    
+
     /**
      * Data provider to provide a fresh Config Manager with each test.
      */
@@ -35,8 +35,8 @@ class AbstractFacadeTest extends PHPUnit_Framework_TestCase
     {
         return [
             [
-                new Manager($this->sampleConfigData)
-            ]
+                new Manager($this->sampleConfigData),
+            ],
         ];
     }
 
@@ -45,7 +45,7 @@ class AbstractFacadeTest extends PHPUnit_Framework_TestCase
      *
      * @dataProvider configProvider
      *
-     * @param  Manager $config
+     * @param Manager $config
      */
     public function testWithoutParentKey(Manager $config)
     {
@@ -63,7 +63,7 @@ class AbstractFacadeTest extends PHPUnit_Framework_TestCase
      *
      * @dataProvider configProvider
      *
-     * @param  Manager $config
+     * @param Manager $config
      */
     public function testWithParentKey(Manager $config)
     {
